@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Kite+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+  --font-display: "Satoshi", "sans-serif";
+  --breakpoint-3xl: 120rem;
+  --color-primary: rgb(119, 124, 109);
+  --color-secondary: rgb(183, 184, 159);
+  --color-tertiary: rgb(203, 203, 203);
+  --color-accent: rgb(238, 238, 238);
+  --font-sans: "Poppins", ui-sans-serif, system-ui;
+  --font-kite: "Kite One", ui-sans-serif, system-ui;
+  --font-apple: "Homemade Apple", monospace;
+  --font-roboto: "Roboto", ui-sans-serif, system-ui;
+}
+
+.apple {
+  font-family: "Homemade Apple", cursive;
+}
+
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-down {
+  animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
