@@ -1,0 +1,8 @@
+---
+import { getCollection } from 'astro:content';
+
+const paintings = await getCollection('paintings');
+console.log(paintings);
+---
+<h1>uwuuu</h1>
+<p>{paintings.length}</p>
