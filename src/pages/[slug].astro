@@ -5,16 +5,10 @@ import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
   const paintings = await getCollection('paintings');
-  return paintings.map(post => {
-    return {
-      params: {
-        slug: post.data.slug
-      },
-      props: {
-        post
-      }
-    }
-  });
+  return paintings.map(post => ({
+    params: { slug: post.data.slug },
+    props: { post }
+  }));
 }
 
 type Props = {
@@ -22,12 +16,14 @@ type Props = {
 }
 
 const { post } = Astro.props;
-console.log("POSTTTTTTTTTTTTTT",post)
-const { Content } = await post.render();
 ---
 
-<h1>{post.data.title}</h1>
 
-<article>
-  <Content />
-</article>
+<div class="bg-primary py-10 text-tertiary min-h-screen">
+  <article class="w-10/12 mx-auto">
+  <img class="w-full h-auto" src=`${post.data.image}` alt="">
+<h1>{post.data.title}</h1>
+  <h1>{post.data.artist}</h1>
+  <h1>{post.data.date.toDateString()}</h1>
+</article>  
+</div>
