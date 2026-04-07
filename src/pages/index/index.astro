@@ -1,0 +1,20 @@
+---
+import "../../styles/global.css";
+import { getCollection } from "astro:content";
+
+const paintings = await getCollection("paintings");
+---
+
+<div class="bg-primary font-kite py-10 min-h-screen">
+  <div class="w-10/12 mx-auto">
+    {
+      paintings.map((post) => (
+        <p>
+          <a class="text-tertiary" href={`/${post.data.slug}`}>
+            {post.data.title}
+          </a>
+        </p>
+      ))
+    }
+  </div>
+</div>
