@@ -19,6 +19,12 @@
   font-family: "Homemade Apple", cursive;
 }
 
+.writing-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  text-align: left;
+}
+
 
 @keyframes fadeInDown {
   0% {
