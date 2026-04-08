@@ -3,16 +3,16 @@ import "../../styles/global.css";
 import { getCollection } from "astro:content";
 
 const paintings = await getCollection("paintings");
-console.log("uwu",paintings)
 ---
 
-<div class="bg-primary font-kite py-10 min-h-screen">
+<div class="bg-primary text-tertiary font-kite py-10 min-h-screen">
   <div class="w-10/12 mx-auto">
+    <h1 class="font-bold text-3xl py-2">Index</h1>
     {
       paintings.map((post) => (
         <p>
-          <a class="text-tertiary" href={`/${post.data.slug}`}>
-            {post.data.title}
+          <a class="" href={`/${post.data.slug}`}>
+            {post.data.title} - <b>{post.data.artist}</b>
           </a>
         </p>
       ))

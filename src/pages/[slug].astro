@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import "../styles/global.css";
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
   const paintings = await getCollection("paintings");
@@ -22,11 +23,18 @@ const { post } = Astro.props;
   <article class="w-10/12 mx-auto">
     <div class="flex justify-center">
       <div class="relative text-secondary">
-        <img class="w-11/12 h-10/12" src=`${post.data.image}` alt="" />
-        <span
-          class="absolute -top-4 -rotate-18 text-3xl lg:text-4xl font-apple w-sm -left-10"
-          >Art Analysis</span
-        >
+        <Image
+          src={post.data.image}
+          alt=""
+          width={900}
+          height={700}
+          loading="eager"
+          class="w-11/12 h-auto"
+        />
+
+        <span class="absolute -top-4 -rotate-18 text-3xl lg:text-4xl font-apple w-sm -left-10">
+          Art Analysis
+        </span>
       </div>
 
       <div class="writing-vertical">
@@ -38,6 +46,7 @@ const { post } = Astro.props;
         </h1>
       </div>
     </div>
+
     <h1>{post.data.date.toDateString()}</h1>
   </article>
 </div>
